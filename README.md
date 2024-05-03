@@ -1,8 +1,8 @@
-# Unity-Tv-App
+# Tv App
 
 ## Description
 
-* The Unity-Tv-App allows users to interact with a television using touch input. 
+* The  Tv App allows users to interact with a television using touch input. 
 * Users can turn on the TV and select a gallery option from it. 
 * The gallery displays three videos stored locally within the app. 
 * Users can select any video and play it on the TV screen. 
@@ -17,3 +17,7 @@
 - Build the project for your desired platform (e.g., PC, mobile, etc.).
 - Run the built application and interact with the TV using touch input.
 
+
+## Made With
+- Unity 2022.3.17f
+- C#
