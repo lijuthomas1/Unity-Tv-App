@@ -1,11 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace TV
 {
+    /// <summary>
+    /// This script should be attached to the video button,
+    /// it updates the title and thumb of the video button.
+    /// </summary>
     public class VideoSelectButton : MonoBehaviour
     {
         [SerializeField]

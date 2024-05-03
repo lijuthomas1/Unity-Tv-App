@@ -1,10 +1,12 @@
-using TV.Core;
 using System;
+using TV.Core;
 namespace TV
 {
+    /// <summary>
+    /// The Game Manager handles all the states of the game.
+    /// Based on the GameState other scripts do some action.
+    /// </summary>
 
-    // Game manager is handling the all the states of game.
-    // Based on the game states other scripts will respond
     public class GameManager : Singleton<GameManager>
     {
         private GameState currentState = GameState.None;

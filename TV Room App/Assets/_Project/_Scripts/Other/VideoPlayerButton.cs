@@ -3,6 +3,10 @@ using UnityEngine.UI;
 
 namespace TV
 {
+    /// <summary>
+    /// This script manages the images of the video player button based on the video state.
+    /// It receives data from the Video Player Controller script.
+    /// </summary>
     public class VideoPlayerButton : MonoBehaviour
     {
         [SerializeField] private Sprite playSprite;
@@ -35,7 +39,7 @@ namespace TV
         }
 
 
-        public void OnStateChange(VideoState state)
+        private void OnStateChange(VideoState state)
         {
             //Debug.Log(state);
             switch (state)

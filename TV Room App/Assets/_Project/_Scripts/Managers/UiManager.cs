@@ -1,10 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using TV.Core;
 using UnityEngine;
 
 namespace TV
 {
+    /// <summary>
+    /// The UI manager handles all the main UI selections of the game.
+    /// Based on the GameState this script does some action.
+    /// </summary>
     public class UiManager : MonoBehaviour
     {
         [SerializeField] private GameObject tapOnTvPanel;

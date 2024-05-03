@@ -1,13 +1,16 @@
-
 using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.Events;
 using System;
 
 namespace TV
 {
+    /// <summary>
+    /// This script controls all video actions.
+    /// Also sends the current video status (Playing, Paused, Ended),
+    /// according to each state the receiver performs some action.
+    /// </summary>
     public class VideoPlayerController : MonoBehaviour
     {
         [SerializeField] private VideoPlayer videoPlayer;
@@ -34,12 +37,6 @@ namespace TV
             GalleryManager.OnVideoClipSelected += UpdateCurrentVideo;
             GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
         }
-
-        private void VideoLoaded(VideoPlayer source)
-        {
-            CheckAndPlayVideo();
-        }
-
         private void OnDestroy()
         {
             videoPlayer.started -= VideoStarted;
@@ -48,6 +45,14 @@ namespace TV
             GalleryManager.OnVideoClipSelected -= UpdateCurrentVideo;
             GameManager.OnGameStateChanged -= GameManagerOnGameStateChanged;
         }
+
+
+        //once current video is loaded,
+        private void VideoLoaded(VideoPlayer source)
+        {
+            CheckAndPlayVideo();
+        }
+
 
         private void GameManagerOnGameStateChanged(GameState state)
         {
@@ -58,10 +63,7 @@ namespace TV
                 case GameState.Gallery:
                     PauseVideo();
                     ResetVideoClip();
-                    break;
-                case GameState.VideoPlayback:
-                    ;
-                    break;
+                    break;                
             }
 
         }

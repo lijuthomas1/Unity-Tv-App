@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 namespace TV.Core
 {
-    // Base class of all singleton
-    using UnityEngine;
 
+    /// <summary>
+    /// Base class of all singleton. Where T is Type Parameter, means class name.
+    /// public class Myclass : Singleton<Myclass>{}
+    /// </summary>
     public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
 

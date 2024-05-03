@@ -1,12 +1,16 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.Video;
 namespace TV
 {
+    /// <summary>
+    /// The gallery manager is holding the list of video information.
+    /// Each list has a Title, a Thumb Image, And a Video clip.
+    /// Video buttons are Instantiating based on the list.
+    /// When the video button is clicked, the appropriate video updates to the player.
+    /// </summary>
     public class GalleryManager : MonoBehaviour
     {
         [SerializeField]
