@@ -210,8 +210,10 @@ GameObject:
   - component: {fileID: 72511988}
   - component: {fileID: 72511987}
   - component: {fileID: 72511986}
+  - component: {fileID: 72511989}
+  - component: {fileID: 72511990}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Menu_Canvas_Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -303,6 +305,46 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &72511989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72511984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3284b9580eea2648ae507161cd16319, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tapOnTvPanel: {fileID: 1572713916}
+  mainMenuPanel: {fileID: 1892913541}
+  galleryPanel: {fileID: 626914427}
+  videoPlayerPanel: {fileID: 450583626}
+--- !u!114 &72511990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72511984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b702557414f7b44c8e339fb4c61395c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoList:
+  - title: I Am Groot
+    thumb: {fileID: 21300000, guid: 1104c8947c5d2ea4dbaadef6e054ce2d, type: 3}
+    clip: {fileID: 32900000, guid: d243437bc19719f4196ca7bcf05eed34, type: 3}
+  - title: Plum
+    thumb: {fileID: 21300000, guid: 28b018a3eb41a0b4bb58e1475572e5bb, type: 3}
+    clip: {fileID: 32900000, guid: 5438e7dfaed0882468c925137413e518, type: 3}
+  - title: WiNDUP
+    thumb: {fileID: 21300000, guid: 725f243642363e249b9d3aacd80c0af0, type: 3}
+    clip: {fileID: 32900000, guid: dd3cd2357234f4449987c60b1a18ec3f, type: 3}
+  buttonPrefab: {fileID: 8744815351258940500, guid: 7054e6b9ff8e7264a82429dc2784f57a, type: 3}
+  buttonParent: {fileID: 626914427}
 --- !u!1 &81936692
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,6 +565,7 @@ GameObject:
   - component: {fileID: 186115586}
   - component: {fileID: 186115585}
   - component: {fileID: 186115584}
+  - component: {fileID: 186115587}
   m_Layer: 5
   m_Name: VideoTimer_Text
   m_TagString: Untagged
@@ -646,6 +689,18 @@ RectTransform:
   m_AnchoredPosition: {x: -100, y: 0}
   m_SizeDelta: {x: 200, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &186115587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186115583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d86a0c354dcde0341a0fb648bb50965b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &213693145
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,6 +711,7 @@ GameObject:
   m_Component:
   - component: {fileID: 213693146}
   - component: {fileID: 213693147}
+  - component: {fileID: 213693148}
   m_Layer: 5
   m_Name: VideoPlayVisualizingSlider
   m_TagString: Untagged
@@ -736,6 +792,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &213693148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213693145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0967065ebbb2054b944917f7349b148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &245232847
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,6 +958,7 @@ GameObject:
   - component: {fileID: 259702471}
   - component: {fileID: 259702470}
   - component: {fileID: 259702473}
+  - component: {fileID: 259702474}
   m_Layer: 5
   m_Name: Gallery_Btn
   m_TagString: Untagged
@@ -960,19 +1029,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 259702471}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 979848650}
-        m_TargetAssemblyTypeName: TV.UiManager, Assembly-CSharp
-        m_MethodName: OnClickGalleryButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &259702471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1023,6 +1080,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56e04ed9aa3be9d4e9d0101fa3c398e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &259702474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259702468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc0344931ce19d14e8f26284a610f6ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &275306570
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,8 +1101,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 275306571}
+  - component: {fileID: 275306572}
   m_Layer: 0
-  m_Name: TV_Group
+  m_Name: TV_Group_Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1057,6 +1127,18 @@ Transform:
   - {fileID: 1618028192}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &275306572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275306570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be681814b671b1e43aa22e95ac9359ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &306384601
 GameObject:
   m_ObjectHideFlags: 0
@@ -1605,10 +1687,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24c20df210c20345ae4418c79e5f01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videoPlayer: {fileID: 541733451}
-  videoVisualingSlider: {fileID: 213693147}
-  videoInteractingSlider: {fileID: 2018779670}
-  videoTimeText: {fileID: 186115584}
 --- !u!1 &545926940
 GameObject:
   m_ObjectHideFlags: 0
@@ -2203,54 +2281,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!1 &979848648
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 979848649}
-  - component: {fileID: 979848650}
-  m_Layer: 0
-  m_Name: UiManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &979848649
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 979848648}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &979848650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 979848648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3284b9580eea2648ae507161cd16319, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tapOnTvPanel: {fileID: 1572713916}
-  mainMenuPanel: {fileID: 1892913541}
-  galleryPanel: {fileID: 626914427}
-  videoPlayerPanel: {fileID: 450583626}
 --- !u!1 &1022411939
 GameObject:
   m_ObjectHideFlags: 0
@@ -2357,50 +2387,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 649216906}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1131325953
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1131325954}
-  - component: {fileID: 1131325955}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1131325954
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1131325953}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1131325955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1131325953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be681814b671b1e43aa22e95ac9359ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1140072106
 GameObject:
   m_ObjectHideFlags: 0
@@ -3108,6 +3094,7 @@ GameObject:
   - component: {fileID: 1572713918}
   - component: {fileID: 1572713920}
   - component: {fileID: 1572713921}
+  - component: {fileID: 1572713922}
   m_Layer: 5
   m_Name: TvOnPanel
   m_TagString: Untagged
@@ -3216,19 +3203,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1572713918}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 979848650}
-        m_TargetAssemblyTypeName: TV.UiManager, Assembly-CSharp
-        m_MethodName: OnClickTvOnPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1572713921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3241,63 +3216,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56e04ed9aa3be9d4e9d0101fa3c398e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1598879131
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1598879132}
-  - component: {fileID: 1598879133}
-  m_Layer: 0
-  m_Name: GalleryManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1598879132
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1598879131}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1598879133
+--- !u!114 &1572713922
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1598879131}
+  m_GameObject: {fileID: 1572713916}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b702557414f7b44c8e339fb4c61395c, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fec5095e1e6adf4aa93ca5ad68a7896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videoList:
-  - title: I Am Groot
-    thumb: {fileID: 21300000, guid: 1104c8947c5d2ea4dbaadef6e054ce2d, type: 3}
-    clip: {fileID: 32900000, guid: d243437bc19719f4196ca7bcf05eed34, type: 3}
-  - title: Plum
-    thumb: {fileID: 21300000, guid: 28b018a3eb41a0b4bb58e1475572e5bb, type: 3}
-    clip: {fileID: 32900000, guid: 5438e7dfaed0882468c925137413e518, type: 3}
-  - title: WiNDUP
-    thumb: {fileID: 21300000, guid: 725f243642363e249b9d3aacd80c0af0, type: 3}
-    clip: {fileID: 32900000, guid: dd3cd2357234f4449987c60b1a18ec3f, type: 3}
-  buttonPrefab: {fileID: 8744815351258940500, guid: 7054e6b9ff8e7264a82429dc2784f57a, type: 3}
-  buttonParent: {fileID: 626914427}
-  videoPlayerController: {fileID: 541733453}
 --- !u!4 &1618028192 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 712733b6d770d8f41a4843ccfb6e15db, type: 3}
@@ -3555,37 +3485,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1789305222}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1815298422
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1815298423}
-  m_Layer: 0
-  m_Name: ----Managers----
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1815298423
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1815298422}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -4042,6 +3941,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2018779669}
   - component: {fileID: 2018779670}
+  - component: {fileID: 2018779671}
   m_Layer: 5
   m_Name: VideoPlayInteraciveSlider
   m_TagString: Untagged
@@ -4122,6 +4022,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2018779671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018779668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 729dba1edb6db79488b0942c8117b4c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2098633956
 GameObject:
   m_ObjectHideFlags: 0
@@ -4157,10 +4069,6 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1815298423}
-  - {fileID: 1131325954}
-  - {fileID: 979848649}
-  - {fileID: 1598879132}
   - {fileID: 629868704}
   - {fileID: 963194228}
   - {fileID: 535040541}

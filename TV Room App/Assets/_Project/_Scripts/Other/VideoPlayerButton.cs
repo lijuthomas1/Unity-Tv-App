@@ -12,10 +12,8 @@ namespace TV
         [SerializeField] private Sprite playSprite;
         [SerializeField] private Sprite pauseSprite;
         [SerializeField] private Sprite retrySprite;
-
-        [SerializeField] private Image thisImage;
-
-        private void Start ()
+       [SerializeField] private Image thisImage;
+       private void Start ()
         {
             thisImage = this.GetComponent<Image>();
         }
@@ -28,18 +26,14 @@ namespace TV
         {
             VideoPlayerController.OnVideoStateChanged -= OnStateChange;
         }
-
-
-        private void UpdateImage(Sprite newSprite)
+       private void UpdateImage(Sprite newSprite)
         {
             if (thisImage != null)
             {
                 thisImage.sprite = newSprite;
             }
         }
-
-
-        private void OnStateChange(VideoState state)
+       private void OnStateChange(VideoState state)
         {
             //Debug.Log(state);
             switch (state)

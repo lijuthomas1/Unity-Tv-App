@@ -8,8 +8,7 @@ namespace TV
     public class ButtonClickPlayer : MonoBehaviour
     {
         private AudioSource audioSource;
-
-        private void Start()
+       private void Start()
         {
             audioSource = GetComponent<AudioSource>();
             ButtonClick.OnButtonClick += PlayButtonClick;
@@ -18,8 +17,7 @@ namespace TV
         {
             ButtonClick.OnButtonClick -= PlayButtonClick;
         }
-
-        private void PlayButtonClick()
+       private void PlayButtonClick()
         {
             if(audioSource != null) audioSource.Play();
         }

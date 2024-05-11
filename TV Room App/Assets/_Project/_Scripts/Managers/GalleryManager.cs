@@ -19,11 +19,8 @@ namespace TV
         private GameObject buttonPrefab;
         [SerializeField]
         private GameObject buttonParent;
-        [SerializeField]
-        private VideoPlayerController videoPlayerController;
         public static event Action<VideoClip> OnVideoClipSelected;
-
-        private void OnEnable()
+       private void OnEnable()
         {
             for (int i = 0; i < videoList.Count; i++)
             {
@@ -34,29 +31,24 @@ namespace TV
                 {
                     OnClickVideoButton(buttonIndex);
                 });
-
-
-            }
+           }
         }
-
-        private void UpdateVideoOnVideoPlayer(VideoClip videoClip)
+       private void UpdateVideoOnVideoPlayer(VideoClip videoClip)
         {
-            if (videoPlayerController != null && videoClip != null)
+            if (videoClip != null)
             {
                 OnVideoClipSelected?.Invoke(videoClip);
             }
         }
-
-        private void OnClickVideoButton(int buttonIndex)
+       private void OnClickVideoButton(int buttonIndex)
         {
             //Debug.Log("buttonIndex "+ buttonIndex);
             if(buttonIndex >= 0 && buttonIndex<= videoList.Count - 1)
             {
                 UpdateVideoOnVideoPlayer(videoList[buttonIndex].clip);
-                GameManager.Instance.SetState(GameState.VideoPlayback);
+                TvManager.Instance.SetState(TvState.VideoPlayback);
             }
         }
-
-    }
+   }
 
 }

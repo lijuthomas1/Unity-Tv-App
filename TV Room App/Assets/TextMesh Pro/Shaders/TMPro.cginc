@@ -29,8 +29,7 @@ float3 GetSurfaceNormal(float4 h, float bias)
 	h += bias+_BevelOffset;
 
 	float bevelWidth = max(.01, _OutlineWidth+_BevelWidth);
-
-  // Track outline
+ // Track outline
 	h -= .5;
 	h /= bevelWidth;
 	h = saturate(h+.5);

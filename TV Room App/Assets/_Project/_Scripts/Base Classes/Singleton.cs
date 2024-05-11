@@ -1,19 +1,16 @@
 using UnityEngine;
 namespace TV.Core
 {
-
-    /// <summary>
+   /// <summary>
     /// Base class of all singleton. Where T is Type Parameter, means class name.
     /// public class Myclass : Singleton<Myclass>{}
     /// </summary>
     public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
-
-        private static T _instance;
+       private static T _instance;
         private static readonly object _instanceLock = new object();
         private static bool _quitting = false;
-
-        public static T Instance
+       public static T Instance
         {
             get
             {
@@ -21,23 +18,19 @@ namespace TV.Core
                 {
                     if (_instance == null && !_quitting)
                     {
-
-                        _instance = GameObject.FindObjectOfType<T>();
+                       _instance = GameObject.FindObjectOfType<T>();
                         if (_instance == null)
                         {
                             GameObject go = new GameObject(typeof(T).ToString());
                             _instance = go.AddComponent<T>();
-
-                            DontDestroyOnLoad(_instance.gameObject);
+                           DontDestroyOnLoad(_instance.gameObject);
                         }
                     }
-
-                    return _instance;
+                   return _instance;
                 }
             }
         }
-
-        protected virtual void Awake()
+       protected virtual void Awake()
         {
             if (_instance == null) _instance = gameObject.GetComponent<T>();
             else if (_instance.GetInstanceID() != GetInstanceID())
@@ -46,11 +39,9 @@ namespace TV.Core
                 throw new System.Exception(string.Format("Instance of {0} already exists, removing {1}", GetType().FullName, ToString()));
             }
         }
-
-        protected virtual void OnApplicationQuit()
+       protected virtual void OnApplicationQuit()
         {
             _quitting = true;
         }
-
-    }
+   }
 }

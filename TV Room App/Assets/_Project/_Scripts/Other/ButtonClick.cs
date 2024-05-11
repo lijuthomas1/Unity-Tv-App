@@ -1,33 +1,14 @@
 using System;
-using UnityEngine;
-using UnityEngine.UI;
-
 namespace TV
 {
     /// <summary>
-    /// Whenever clicking the Unity UI Button, it sends an event.
-    /// This component should be attached to the Unity UI Button.
-    /// The receivers can perform some action.
+    /// Derived from BaseButtonClick for handling buttonclick sound
     /// </summary>
-    public class ButtonClick : MonoBehaviour
+    public class ButtonClick : BaseButtonClick
     {
-        private Button button;
         public static event Action OnButtonClick;
-
-        private void Start()
+        protected override void ButtonClicked()
         {
-            button = GetComponent<Button>();
-            if (button != null)
-            {
-                button.onClick.AddListener(() =>
-                {
-                    ButtonClicked();
-                });
-            }
-        }
-        private void ButtonClicked()
-        {
-            //Debug.Log("OnMouseDown");
             OnButtonClick?.Invoke();
         }
     }

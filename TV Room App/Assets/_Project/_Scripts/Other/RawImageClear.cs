@@ -9,30 +9,25 @@ namespace TV
     public class RawImageClear : MonoBehaviour
     {
         private RawImage rawImage;
-
-        private void Start()
+       private void Start()
         {
             rawImage = GetComponent<RawImage>();
-            GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
+            TvManager.OnTvStateChanged += GameManagerOnTvStateChanged;
         }
         private void OnDestroy()
         {
-            GameManager.OnGameStateChanged -= GameManagerOnGameStateChanged;
+            TvManager.OnTvStateChanged -= GameManagerOnTvStateChanged;
         }
-
-
-        private void GameManagerOnGameStateChanged(GameState state)
+       private void GameManagerOnTvStateChanged(TvState state)
         {
             switch (state)
             {
-                case GameState.Gallery:
+                case TvState.Gallery:
                     ClearRowimage();
                     break;
             }
-
-        }
-
-        private void ClearRowimage()
+       }
+       private void ClearRowimage()
         {
             if( rawImage != null) rawImage.texture = null;
         }

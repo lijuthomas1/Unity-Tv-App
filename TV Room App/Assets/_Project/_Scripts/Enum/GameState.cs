@@ -3,7 +3,7 @@
     /// <summary>
     /// This Enum for handling the states of the game. 
     /// </summary>
-    public enum GameState
+    public enum TvState
     {
         None,
         MainMenu,

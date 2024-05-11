@@ -22,9 +22,7 @@ namespace TV
         {
             if (thumbImage != null) thumbImage.sprite = sprite;
         }
-
-
-        public void UpdateVideoButtonDetails(string title, Sprite thumbImage)
+       public void UpdateVideoButtonDetails(string title, Sprite thumbImage)
         {
             UpdateTitle(title);
             UpdateThumbImage(thumbImage);
